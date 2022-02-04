@@ -13,6 +13,10 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/assets/css/styles.css', function(req, res){
+    res.sendFile(__dirname + '/assets/css/styles.css');
+});
+
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
 
