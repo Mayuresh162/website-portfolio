@@ -17,6 +17,10 @@ app.get('/assets/css/styles.css', function(req, res){
     res.sendFile(__dirname + '/assets/css/styles.css');
 });
 
+app.get('/assets/css/swiper-bundle.min.css', function(req, res){
+    res.sendFile(__dirname + '/assets/css/swiper-bundle.min.css');
+});
+
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
 
