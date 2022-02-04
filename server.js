@@ -37,6 +37,14 @@ app.get('/assets/img/my-photo.png', function(req, res){
     res.sendFile(__dirname + '/assets/img/my-photo.png');
 });
 
+app.get('/assets/js/swiper-bundle.min.js', function(req, res){
+    res.sendFile(__dirname + '/assets/js/swiper-bundle.min.js');
+});
+
+app.get('/assets/js/main.js', function(req, res){
+    res.sendFile(__dirname + '/assets/js/main.js');
+});
+
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
 
