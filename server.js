@@ -9,11 +9,11 @@ var io = require('socket.io')(http, {
     }
 });
 
-// app.get('/', function(req, res){
-//     res.sendFile(__dirname + '/index.html');
-// });
+app.get('/', function(req, res){
+    res.sendFile(express.static('public'));
+});
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
