@@ -10,7 +10,7 @@ var io = require('socket.io')(http, {
 });
 
 app.get('/', function(req, res){
-    res.sendFile(express.static('public'));
+    res.sendFile(__dirname + 'public'));
 });
 
 // app.use(express.static('public'));
