@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static("public"));
 
 var http = require('http').createServer(app);
 
@@ -10,6 +9,11 @@ var io = require('socket.io')(http, {
       origin: '*',
     }
 });
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
 
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
