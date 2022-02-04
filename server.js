@@ -21,6 +21,22 @@ app.get('/assets/css/swiper-bundle.min.css', function(req, res){
     res.sendFile(__dirname + '/assets/css/swiper-bundle.min.css');
 });
 
+app.get('/assets/img/about_me_5.jpg', function(req, res){
+    res.sendFile(__dirname + '/assets/img/about_me_5.jpg');
+});
+
+app.get('/assets/img/AC_Logo_Horizontal_onWhite.jpg', function(req, res){
+    res.sendFile(__dirname + '/assets/img/AC_Logo_Horizontal_onWhite.jpg');
+});
+
+app.get('/assets/img/download.png', function(req, res){
+    res.sendFile(__dirname + '/assets/img/download.png');
+});
+
+app.get('/assets/img/my-photo.png', function(req, res){
+    res.sendFile(__dirname + '/assets/img/my-photo.png');
+});
+
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
 
