@@ -22,7 +22,7 @@
 
         socket.on('messageSent', function (message) {
             $.notify('New Message\n' + message.message + '\n\nFrom: ' +
-            message.firstName + message.lastName + '\n\nEmail: ' + message.email, {
+            message.firstName + message.lastName, {
                 autoHide: false,
                 className: 'success'
             })
