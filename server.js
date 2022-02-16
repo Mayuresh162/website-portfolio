@@ -45,6 +45,10 @@ app.get('/assets/js/main.js', function(req, res){
     res.sendFile(__dirname + '/assets/js/main.js');
 });
 
+app.get('/assets/pdf/MayureshBhagat.pdf', function(req, res){
+    res.sendFile(__dirname + '/assets/pdf/MayureshBhagat.pdf');
+});
+
 http.listen(process.env.PORT || 3000, function() {
     console.log('Server Connected');
 
