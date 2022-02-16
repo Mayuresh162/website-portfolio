@@ -724,6 +724,7 @@
                     </form>
                 </div>
             </section>
+            <div id="snackbar">Message sent succesfully</div>
         </main>
 
         <!--==================== FOOTER ====================-->
@@ -782,6 +783,7 @@
 
         <script>
             var socket = io("https://mayureshbhagat.herokuapp.com/");
+            var x = document.getElementById("snackbar");
 
             function sendMessage() {
                 socket.emit('messageSent', {
@@ -791,6 +793,9 @@
                     'subject': document.getElementById('subject').value,
                     'message': document.getElementById('message').value,
                 });
+                x.className = "show";
+
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
                 document.getElementById("myForm").reset();
             }
         </script>
