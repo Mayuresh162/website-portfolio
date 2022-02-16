@@ -716,7 +716,7 @@
                         </div>
 
                         <div>
-                            <span class="button button--flex" onclick="sendMessage()">
+                            <span class="button button--flex" onclick="validate()">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
                             </span>
@@ -785,18 +785,43 @@
             var socket = io("https://mayureshbhagat.herokuapp.com/");
             var x = document.getElementById("snackbar");
 
-            function sendMessage() {
+            function validate() {
+                var firstName = document.getElementById('firstname').value
+                var lastname = document.getElementById('lastname').value
+                var email = document.getElementById('email').value
+                var subject = document.getElementById('subject').value
+                var message = document.getElementById('message').value
+
+                if (firstName && lastname && email && subject && message) {
+                    sendMessage(firstName, lastname, email, subject, message)
+                } else {
+                    showError()
+                }
+            }
+
+            function sendMessage(fName, lName, email, sub, msg) {
                 socket.emit('messageSent', {
-                    'firstName': document.getElementById('firstname').value,
-                    'lastName': document.getElementById('lastname').value,
-                    'email': document.getElementById('email').value,
-                    'subject': document.getElementById('subject').value,
-                    'message': document.getElementById('message').value,
+                    'firstName': fName,
+                    'lastName': lName,
+                    'email': email,
+                    'subject': sub,
+                    'message': msg,
                 });
+
+                document.getElementById('snackbar').innerHTML = 'Message sent succesfully.'
+
                 x.className = "show";
 
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
                 document.getElementById("myForm").reset();
+            }
+
+            function showError() {
+                document.getElementById('snackbar').innerHTML = 'Please fill all the fields.'
+                
+                x.className = "error";
+
+                setTimeout(function(){ x.className = x.className.replace("error", ""); }, 1000); 
             }
         </script>
     </body>
