@@ -691,7 +691,7 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact__form grid">
+                    <form action="" class="contact__form grid" id="myForm">
                         <div class="contact__inputs grid">
                             <div class="contact__content">
                                 <label for="firstname" class="label__content">First Name</label>
@@ -736,9 +736,9 @@
                     </div>
 
                     <ul class="footer__links">
-                        <li>
+<!--                         <li>
                             <a href="#services" class="footer__link">Services</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="#projects" class="footer__link">Projects</a>
                         </li>
@@ -791,6 +791,7 @@
                     'subject': document.getElementById('subject').value,
                     'message': document.getElementById('message').value,
                 });
+                document.getElementById("myForm").reset();
             }
         </script>
     </body>
