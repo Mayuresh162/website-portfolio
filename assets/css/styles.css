@@ -509,9 +509,13 @@ img{
     background-color: var(--first-color);
 }
 
-.skills__html,
-.skills__angular{
+.skills__html {
     width: 90%;
+}
+
+
+.skills__react {
+    width: 80%;
 }
 
 .skills__css,
@@ -520,16 +524,18 @@ img{
 }
 
 .skills__js,
-.skills__node,
-.skills__firebase{
+.skills__angular {
     width: 70%;
 }
 
-.skills__react{
-    width: 60%;
+.skills__react_native{
+    width: 50%;
 }
 
 .skills__express,
+.skills__node,
+.skills__firebase,
+.skills__dsa,
 .skills__mysql,
 .skills__mongo{
     width: 50%;
@@ -885,7 +891,7 @@ img{
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
 
-#snackbar.error {
+  #snackbar.error {
     background-color: red;
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
@@ -914,6 +920,7 @@ img{
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
+  
 
 /*==================== FOOTER ====================*/
 .footer{
@@ -1328,6 +1335,6 @@ img{
     }
 
     .contact__inputs{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
